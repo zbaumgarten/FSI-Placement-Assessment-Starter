@@ -21,22 +21,73 @@ const sugarMinusBtn = document.querySelector('#minus-sugar')
 credit.textContent = `Created by ${yourName}`
 
 // TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
-let gbTotal = document.querySelector('.qty-gb')
+
+let grandTotal = document.querySelector('#qty-total')
+
+let gbTotal = document.querySelector('#qty-gb')
+
 
 gbPlusBtn.addEventListener('click', function () {
 	gb++
-	
+	console.log('Plus button has been clicked')
 	console.log(gb)
-	gbTotal.textContent = 'Quantity: ${gb}'
+	gbTotal.textContent = `${gb}`
+    grandTotal.textContent = gb + cc + sugar
 })
 
 gbMinusBtn.addEventListener('click', function () {
-	
+	console.log('Minus Button has been clicked')
 	if (gb <= 0) { gb = 0 } else {
 		gb--
 		console.log(gb)
-		gbTotal.textContent = 'Quantity: ${gb}'
+		gbTotal.textContent = `${gb}`
+        grandTotal.textContent = gb + cc + sugar
 }
 })
+
+let ccTotal = document.querySelector('#qty-cc')
+
+
+ccPlusBtn.addEventListener('click', function () {
+	cc++
+	console.log('Plus button has been clicked')
+	console.log(cc)
+	ccTotal.textContent = `${cc}`
+    grandTotal.textContent = gb + cc + sugar
+})
+
+ccMinusBtn.addEventListener('click', function () {
+	console.log('Minus Button has been clicked')
+	if (cc <= 0) { cc = 0 } else {
+		cc--
+		console.log(cc)
+		ccTotal.textContent = `${cc}`
+        grandTotal.textContent = gb + cc + sugar
+}
+})
+
+let sugarTotal = document.querySelector('#qty-sugar')
+
+
+sugarPlusBtn.addEventListener('click', function () {
+	sugar++
+	console.log('Plus button has been clicked')
+	console.log(sugar)
+	sugarTotal.textContent = `${sugar}`
+    grandTotal.textContent = gb + cc + sugar
+})
+
+sugarMinusBtn.addEventListener('click', function () {
+	console.log('Minus Button has been clicked')
+	if (sugar <= 0) { sugar = 0 } else {
+		sugar--
+		console.log(sugar)
+		sugarTotal.textContent = `${sugar}`
+        grandTotal.textContent = gb + cc + sugar
+}
+})
+
+
+
 
 // TODO: Hook up event listeners for the rest of the buttons
